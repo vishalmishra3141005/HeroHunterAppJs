@@ -24,6 +24,7 @@
 .text-style {
     letter-spacing: 3px;
     cursor: pointer;
+    color: black;
 }
 
 .text-style:hover {
