@@ -1,9 +1,13 @@
+
+/* this page contains style about back and search box and logo of home page */
+
 .homepage {
     background-image: url("/assets/54687.jpg");
     height: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 80px;
 }
 
 .searchbar {

@@ -1,5 +1,9 @@
+
+/* this file contains style of nav bar */
+
 .navigation {
     height: 80px;
+    width: 100%;
     font-family: sans-serif;
     font-size: 30px;
     color: white;
@@ -7,6 +11,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
 
 .marvel-logo {

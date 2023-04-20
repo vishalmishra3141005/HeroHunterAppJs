@@ -1,0 +1,22 @@
+
+/* this page file contains style of container of characters */
+
+.characters-container {
+    margin-top: 40px;
+    border: 2px solid grey;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.characters-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.characters {
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    margin-left: 10px;
+}
