@@ -1,4 +1,12 @@
-class Character {
+/* This files contain the structure of the data 
+ that will be received by following api
+ 
+get /v1/public/characters 
+
+main home will call this api
+*/
+
+export class Character {
     constructor(id, name, description, modified, resourceUrl, 
         urls, thumbnail, comics, stories, events, series) {
         this.id = id;
@@ -15,25 +23,32 @@ class Character {
     }
 }
 
-class Url {
+export class Url {
     constructor(type, url) {
         this.type = type;
         this.url = url;
     }
 }
 
-class Image {
+export class Image {
     constructor(path, extension) {
         this.path = path;
-        this.extension;
+        this.extension = extension;
     }
 }
 
-class ComicList {
+export class ComicList {
     constructor(available, returned, collectionURL, items) {
         this.available = available;
         this.returned = returned;
         this.collectionURL = collectionURL;
         this.items = items;
+    }
+}
+
+export class ComicSummary {
+    constructor(resourceUrl, name) {
+        this.resourceUrl = resourceUrl;
+        this.name = name;
     }
 }

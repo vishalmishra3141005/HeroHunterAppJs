@@ -1,0 +1,36 @@
+.homepage {
+    background-image: url("/assets/54687.jpg");
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchbar {
+    display: flex;
+}
+
+.search-style {
+    height: 40px;
+    width: 300px;
+    font-size: 20px;
+    font-family: sans-serif;
+    outline: none;
+    border: 2px solid red;
+    border-radius: 10px;
+    opacity: .85;
+    padding-left: 20px;
+}
+
+
+.search-logo {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 10px;
+    opacity: .8;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid red;
+    margin-left: 1px;
+}
