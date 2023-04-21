@@ -48,15 +48,21 @@ async function fetchCharacters() {
 function loadAllCharacters(jsonData) {
     let cell = 0;
     let results = jsonData.data.results;
+    
     let parent;
     currentCount = results.length;
+    console.log(results);
+    if (currentCount === 0) {
+        alert("No data!");
+        window.open("/index.html", "_self");
+    }
 
     while (characterData.firstChild) {
         characterData.removeChild(characterData.lastChild);
     }
 
     for (let idx = 0; idx < results.length; idx++) {
-        if (cell == 0) {
+        if (cell === 0) {
             parent = document.createElement("div");
             parent.setAttribute("class", "characters-row");
         }
@@ -66,7 +72,7 @@ function loadAllCharacters(jsonData) {
         }
         newChild.setAttribute("id", results[idx].id);
         newChild.setAttribute("class", "characters");
-
+        
         let heroImage = results[idx].thumbnail;
 
         newChild.innerHTML = `
@@ -75,10 +81,10 @@ function loadAllCharacters(jsonData) {
             <div class="hero-name">${results[idx].name}</div>
             <img class="fav-icon" src="/assets/tile002.png">
         </div>`;
-
+        console.log(newChild);
         parent.appendChild(newChild);
         cell++;
-        if (cell == 5) {
+        if (cell == 5 || idx === results.length - 1) {
             characterData.appendChild(parent);
         }
         cell %= 5;
