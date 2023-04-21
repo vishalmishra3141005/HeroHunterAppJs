@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="/css/homepage.css">
     <link rel="stylesheet" href="/css/charactercontainer.css">
     <link rel="stylesheet" href="/css/buttoncontainer.css">
-
-
-    
+    <link rel="stylesheet" href="/css/customloader.css">
 </head>
+
+
 <body>
     <div class="main-container">
         <div class="navigation">
@@ -29,62 +29,77 @@
                 <input class="search-style" placeholder="Search." type="text">
                 <img class="search-logo" src="assets/searchl.svg" alt="search-logo">
             </div>
+
             <div class="characters-container">
-                <div class="characters-row">
-                    <div style="margin-left: 0;" id="character_id" class="characters">
+                <div id="loader-container" class="loader-container" style="display: none;">
+                    <div class="custom-loader">
 
-                    </div>
-                    <div id="character_id" class="characters">
-    
-                    </div>
-                    <div id="character_id" class="characters">
-    
-                    </div>
-                    <div id="character_id" class="characters">
-    
-                    </div>
-                    <div id="character_id" class="characters">
-    
                     </div>
                 </div>
 
-                <div class="characters-row">
-                    <div style="margin-left: 0;" id="character_id" class="characters">
-
+                <div style="display: block;" id="character-data" class="character-data">
+                    <div class="characters-row">
+                        <div style="margin-left: 0;" id="character_id" class="characters">
+                            <img class="img-style" src="https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg" alt="">
+                            <div class="about-hero">
+                                <div class="hero-name">D-Man</div>
+                                <img class="fav-icon" src="/assets/tile002.png">
+                            </div>
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
                     </div>
-                    <div id="character_id" class="characters">
     
+                    <div class="characters-row">
+                        <div style="margin-left: 0;" id="character_id" class="characters">
+                            
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
                     </div>
-                    <div id="character_id" class="characters">
     
-                    </div>
-                    <div id="character_id" class="characters">
+                    <div class="characters-row">
+                        <div style="margin-left: 0;" id="character_id" class="characters">
     
-                    </div>
-                    <div id="character_id" class="characters">
-    
-                    </div>
-                </div>
-
-                <div class="characters-row">
-                    <div style="margin-left: 0;" id="character_id" class="characters">
-
-                    </div>
-                    <div id="character_id" class="characters">
-    
-                    </div>
-                    <div id="character_id" class="characters">
-    
-                    </div>
-                    <div id="character_id" class="characters">
-    
-                    </div>
-                    <div id="character_id" class="characters">
-    
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
                     </div>
                 </div>
 
             </div>
+
+
 
             <div class="button-container">
                 <button class="button-style">Prev</button>
@@ -92,6 +107,8 @@
             </div>
         
         </div>
+
+
     </div>
     <script src="./js/index.js" type="module"></script>
 </body>
