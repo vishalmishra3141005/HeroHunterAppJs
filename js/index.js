@@ -5,21 +5,28 @@ api and create the home page */
 import { auth } from "./module/AuthenticationData.js";
 import { characterData, next, prev } from "./module/PageElement.js"
 import { displayLoader, hideLoader } from "./module/LoaderHandler.js"
+import { searchBar, searchButton } from "./module/SearchBarHandler.js";
+
 
 let offset =  0;
-let pageNumber = 0;
+// let pageNumber = 0;
 const limit = 15;
 
 let currentCount = 0;
-
+let searchTerm = ""
+let searchOffset = 0;
 
 async function fetchCharacters() {
     const baseUrl = "https://gateway.marvel.com";
     let getCharacterApi = "/v1/public/characters";
-
-    let getApi = `${baseUrl}/${getCharacterApi}?${auth}&limit=${limit}&offset=${offset}`;
+    let getApi;
+    if (searchTerm) {
+        getApi = `${baseUrl}/${getCharacterApi}?${auth}&limit=${limit}&offset=${searchOffset}&nameStartsWith=${searchTerm}`;
+    } else {
+        getApi = `${baseUrl}/${getCharacterApi}?${auth}&limit=${limit}&offset=${offset}`;
+    } 
     let jsonData;
-    // console.log(getApi);
+    console.log(getApi);
     
     try {
         let response = await fetch(getApi);
@@ -76,8 +83,12 @@ function loadAllCharacters(jsonData) {
         }
         cell %= 5;
     }
-    offset += results.length;
-    pageNumber++;
+    if (searchTerm) {
+        searchOffset += results.length;
+    } else {
+        offset += results.length;
+    }
+    
 }
 
 next.addEventListener("click", function(e) {
@@ -86,15 +97,34 @@ next.addEventListener("click", function(e) {
 });
 
 prev.addEventListener("click", function(e) {
-    offset -= currentCount;
-    offset -= 15;
-    if (offset < 0) {
-        alert("Reached last page...!");
-        offset = 0;
+    if (searchTerm) {
+        searchOffset -= currentCount;
+        searchOffset -= 15;
+        if (searchOffset < 0) {
+            alert("Reached last page");
+            searchOffset = 0;
+        }
+    } else {
+        offset -= currentCount;
+        offset -= 15;
+        if (offset < 0) {
+            alert("Reached last page...!");
+            offset = 0;
+        }
     }
     displayLoader();
     fetchCharacters();
 });
 
+
+searchButton.addEventListener("click", function(e) {
+    searchTerm = searchBar.value;
+    searchOffset = 0;
+    offset = 0;
+    displayLoader();
+    fetchCharacters();
+});
+
+searchBar.value = "";
 displayLoader();
 fetchCharacters();
