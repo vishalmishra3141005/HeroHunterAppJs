@@ -3,15 +3,14 @@
 api and create the home page */
 
 import { auth } from "./module/AuthenticationData.js";
-import { favoriteClickHandler } from "./module/favouriteclickhandler.js"
+import { characterData, next, prev } from "./module/PageElement.js"
+import { displayLoader, hideLoader } from "./module/LoaderHandler.js"
 
-
-let offset = 0;
+let offset =  0;
+let pageNumber = 0;
 const limit = 15;
-let pagenumber = 0;
 
-let loader = document.getElementById("loader-container");
-let characterData = document.getElementById("character-data");
+let currentCount = 0;
 
 
 async function fetchCharacters() {
@@ -20,6 +19,7 @@ async function fetchCharacters() {
 
     let getApi = `${baseUrl}/${getCharacterApi}?${auth}&limit=${limit}&offset=${offset}`;
     let jsonData;
+    // console.log(getApi);
     
     try {
         let response = await fetch(getApi);
@@ -28,22 +28,26 @@ async function fetchCharacters() {
         } catch(e) {
             console.log(`unable to parse json - ${e}`);
         }
+        hideLoader();
         loadAllCharacters(jsonData);
     } catch(e) {
         console.log(`Unable to load - ${e}`);
+        displayLoader();
     }
 }
 
-function displayLoader() {
-    
-}
 
 
 function loadAllCharacters(jsonData) {
     let cell = 0;
     let results = jsonData.data.results;
-    console.log(results);
     let parent;
+    currentCount = results.length;
+
+    while (characterData.firstChild) {
+        characterData.removeChild(characterData.lastChild);
+    }
+
     for (let idx = 0; idx < results.length; idx++) {
         if (cell == 0) {
             parent = document.createElement("div");
@@ -71,9 +75,26 @@ function loadAllCharacters(jsonData) {
             characterData.appendChild(parent);
         }
         cell %= 5;
-
     }
+    offset += results.length;
+    pageNumber++;
 }
+
+next.addEventListener("click", function(e) {
+    displayLoader();
+    fetchCharacters();
+});
+
+prev.addEventListener("click", function(e) {
+    offset -= currentCount;
+    offset -= 15;
+    if (offset < 0) {
+        alert("Reached last page...!");
+        offset = 0;
+    }
+    displayLoader();
+    fetchCharacters();
+});
 
 displayLoader();
 fetchCharacters();
