@@ -28,22 +28,52 @@ async function fetchCharacters() {
         } catch(e) {
             console.log(`unable to parse json - ${e}`);
         }
+        loadAllCharacters(jsonData);
     } catch(e) {
-        console.log(`Unable to fetch data - ${e}`);
+        console.log(`Unable to load - ${e}`);
     }
-    console.log(jsonData);
-
-    let dataCount = jsonData.count;
-    let dataReceived = jsonData.results;
-
-
-    
-
 }
 
 function displayLoader() {
     
 }
 
+
+function loadAllCharacters(jsonData) {
+    let cell = 0;
+    let results = jsonData.data.results;
+    console.log(results);
+    let parent;
+    for (let idx = 0; idx < results.length; idx++) {
+        if (cell == 0) {
+            parent = document.createElement("div");
+            parent.setAttribute("class", "characters-row");
+        }
+        let newChild = document.createElement("div");
+        if (cell == 0) {
+            newChild.style.marginLeft = "0";
+        }
+        newChild.setAttribute("id", results[idx].id);
+        newChild.setAttribute("class", "characters");
+
+        let heroImage = results[idx].thumbnail;
+
+        newChild.innerHTML = `
+        <img class="img-style" src="${heroImage.path}.${heroImage.extension}" alt="HeroLogo">
+        <div class="about-hero">
+            <div class="hero-name">${results[idx].name}</div>
+            <img class="fav-icon" src="/assets/tile002.png">
+        </div>`;
+
+        parent.appendChild(newChild);
+        cell++;
+        if (cell == 5) {
+            characterData.appendChild(parent);
+        }
+        cell %= 5;
+
+    }
+}
+
 displayLoader();
-// fetchCharacters();
+fetchCharacters();
