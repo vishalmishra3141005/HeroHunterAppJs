@@ -72,7 +72,9 @@ function loadAllCharacters(jsonData) {
         }
         newChild.setAttribute("id", results[idx].id);
         newChild.setAttribute("class", "characters");
-        
+        newChild.addEventListener("click", function(e) {
+            window.open(`/hero.html?characterID=${results[idx].id}`, "_self");
+        });
         let heroImage = results[idx].thumbnail;
 
         newChild.innerHTML = `
@@ -81,7 +83,7 @@ function loadAllCharacters(jsonData) {
             <div class="hero-name">${results[idx].name}</div>
             <img class="fav-icon" src="/assets/tile002.png">
         </div>`;
-        console.log(newChild);
+        // console.log(newChild);
         parent.appendChild(newChild);
         cell++;
         if (cell == 5 || idx === results.length - 1) {
@@ -107,7 +109,7 @@ prev.addEventListener("click", function(e) {
         searchOffset -= currentCount;
         searchOffset -= 15;
         if (searchOffset < 0) {
-            alert("Reached last page");
+            alert("Reached last page...!");
             searchOffset = 0;
         }
     } else {
