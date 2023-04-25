@@ -3,8 +3,8 @@
 api and create the home page */
 
 import { auth } from "./module/AuthenticationData.js";
-import { characterData, next, prev } from "./module/PageElement.js"
-import { displayLoader, hideLoader } from "./module/LoaderHandler.js"
+import { characterData, next, prev } from "./module/PageElement.js";
+import { displayLoader, hideLoader } from "./module/LoaderHandler.js";
 import { searchBar, searchButton } from "./module/SearchBarHandler.js";
 
 
