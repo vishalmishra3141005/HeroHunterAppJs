@@ -8,7 +8,8 @@
     <link rel="shortcut icon" href="/assets/batman.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/navigationbar.css">
-    <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="/css/heropage.css">
+    <link rel="stylesheet" href="/css/customloader.css">
     
 </head>
 <body>
@@ -19,14 +20,63 @@
             <div class="text-style"><a style="text-decoration: none; color: white;" href="./favourite.html">FAVOURITE</a></div>
         </div>
         <div class="homepage">
-            <!-- <div class="searchbar">
-                <input class="search-style" placeholder="Search." type="text">
-                <img class="search-logo" src="assets/searchl.svg" alt="search-logo">
-            </div>
-            <div class="characters-container">
-                
-            </div> -->
+            <div id="loader-container" class="loader-container" style="display: none;">
+                <div class="custom-loader">
 
+                </div>
+            </div>
+            <div class="hero-content">
+                <div class="icon-about-container">
+                    <div class="icon-container">
+                        <img class="hero-icon" src="http://i.annihil.us/u/prod/marvel/i/mg/6/20/52602f21f29ec.jpg" alt="HeroLogo">
+                        <div class="heroname-container">
+                            Hello
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        NA
+                    </div>
+                </div>
+
+                <!-- <div class="hero-data"> -->
+                <div class="hero-data" id="comics" class="list-style">
+                    <ul style="list-style-type: none;">
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                    </ul>
+                </div>
+
+
+                <div class="hero-data" id="comics" class="list-style">
+                    <ul style="list-style-type: none;">
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                    </ul>
+                </div>
+
+                <div class="hero-data" id="series" class="list-style">
+                    <ul style="list-style-type: none;">
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                    </ul>
+                </div>
+
+                <div class="hero-data" id="stories" class="list-style">
+                    <ul style="list-style-type: none;">
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                        <li class="item-style"> hello World</li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </div>
     <script src="/js/HeroHandler.js" type="module"></script>
