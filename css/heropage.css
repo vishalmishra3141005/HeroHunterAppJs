@@ -48,21 +48,33 @@
     overflow-y: auto;
 }
 
-.hero-data {
-    margin-top: 20px;
+.heading-style {
+    margin-top: 15px;
     background-color: rgba(255, 255, 255, .8);
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.hero-data {
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 5px;
 }
 
 
 .list-style {
-    height: 150px;
+    max-height: 130px;
     overflow-y: auto;
     border: 1px solid black;
-    margin-bottom: 20px;
 }
 
 .item-style {
-    height: 35px;
+    height: 25px;
     border: 1px solid black;
+    border-radius: 5px;
+    font-size: 20px;
 }
 

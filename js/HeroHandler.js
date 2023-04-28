@@ -9,9 +9,15 @@ const cID = url.get("characterID");
 
 const fullPath = `${baseUrl}/${api}/${cID}?${auth}`;
 
-
+console.log(fullPath);
 const loaderContainer = document.getElementById("loader-container");
 const heroContent = document.querySelector(".hero-content");
+
+
+let comicsVis = false;
+let seriesVis = false;
+let storiesVis = false;
+let eventsVis = false;
 
 
 async function fetchData() {
@@ -46,6 +52,55 @@ function loadCharacter(apiData) {
 
     const aboutContainer = document.querySelector(".about-container");
     aboutContainer.innerText = `${mainData.description}`
+
+
+
+    const comics = document.getElementById("comics");
+    const series = document.getElementById("series");
+    const stories = document.getElementById("stories");
+    const events = document.getElementById("events");
+
+    const comicsHeading = document.getElementById("comics-heading");
+    comicsHeading.addEventListener("click", function(e) {
+        if (comicsVis) {
+            comics.style.display = "none";
+        } else {
+            comics.style.display = "block";
+        }
+        comicsVis = !comicsVis
+    });
+
+
+    const seriesHeading = document.getElementById("series-heading");
+    seriesHeading.addEventListener("click", function(e) {
+        if (seriesVis) {
+            series.style.display = "none";
+        } else {
+            series.style.display = "block";
+        }
+        seriesVis = !seriesVis;
+    });
+
+
+    const storiesHeading = document.getElementById("stories-heading");
+    storiesHeading.addEventListener("click", function(e) {
+        if (storiesVis) {
+            stories.style.display = "none";
+        } else {
+            stories.style.display = "block";
+        }
+        storiesVis = !storiesVis;
+    });
+
+    const eventsHeading = document.getElementById("events-heading");
+    eventsHeading.addEventListener("click", function(e) {
+        if (eventsVis) {
+            events.style.display = "none";
+        } else {
+            events.style.display = "block";
+        }
+        eventsVis = !eventsVis;
+    });
 
 }
 
