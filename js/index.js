@@ -36,7 +36,6 @@ async function fetchCharacters() {
         } catch(e) {
             console.log(`unable to parse json - ${e}`);
         }
-        hideLoader();
         loadAllCharacters(jsonData);
     } catch(e) {
         console.log(`Unable to load - ${e}`);
@@ -47,7 +46,6 @@ async function fetchCharacters() {
 async function loadAllCharacters(jsonData) {
     let cell = 0;
     let results = jsonData.data.results;
-    
     let parent;
     currentCount = results.length;
 
@@ -156,6 +154,7 @@ async function loadAllCharacters(jsonData) {
         offset += results.length;
     }
     
+    hideLoader();
 }
 
 next.addEventListener("click", function(e) {
