@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/navigationbar.css">
     <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="/css/charactercontainer.css">
+    <link rel="stylesheet" href="/css/buttoncontainer.css">
+    <link rel="stylesheet" href="/css/customloader.css">
     
 </head>
 <body>
@@ -27,16 +30,79 @@
                 
             </div> -->
             <div class="characters-container">
-                <div class="characters">
+                <div id="loader-container" class="loader-container" style="display: none;">
+                    <div class="custom-loader">
 
+                    </div>
                 </div>
-                <button>Prev</button>
-                <button>Next</button>
+
+                <div style="display: block;" id="character-data" class="character-data">
+                    <!-- <div class="characters-row">
+                        <div style="margin-left: 0;" id="character_id" class="characters">
+                            <img class="img-style" src="https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg" alt="">
+                            <div class="about-hero">
+                                <div class="hero-name">D-Man</div>
+                                <img class="fav-icon" src="/assets/tile002.png">
+                            </div>
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                    </div>
+    
+                    <div class="characters-row">
+                        <div style="margin-left: 0;" id="character_id" class="characters">
+                            
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                    </div>
+    
+                    <div class="characters-row">
+                        <div style="margin-left: 0;" id="character_id" class="characters">
+    
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                        <div id="character_id" class="characters">
+        
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="button-container">
+                <button id="prev" class="button-style">Prev</button>
+                <button id="next" class="button-style">Next</button>
             </div>
             
         </div>
     </div>
-
-    </div>
+    <script type="module" src="./js/FavouriteHandler.js"></script>
 </body>
 </html>

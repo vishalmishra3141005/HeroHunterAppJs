@@ -57,3 +57,13 @@ export async function getCharacter(charId) {
         return null;
     }
 }
+
+export async function getAllData() {
+  const dbRef = firebaseDatabase.ref(db);
+  try {
+    const snapshot = await firebaseDatabase.get(firebaseDatabase.child(dbRef, `characters/`));
+    return snapshot.val();
+  } catch(err) {
+    throw new Error(err);
+  }
+}
