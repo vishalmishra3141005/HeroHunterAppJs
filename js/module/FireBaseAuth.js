@@ -14,19 +14,7 @@ import * as firebaseDatabase from "https://www.gstatic.com/firebasejs/9.21.0/fir
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyC-UxCx4bRKK3MXRlBXgmGzz5H6kxybs9E",
 
-    authDomain: "herohunter-27d7b.firebaseapp.com",
-
-    databaseURL: "https://herohunter-27d7b-default-rtdb.firebaseio.com",
-
-    projectId: "herohunter-27d7b",
-
-    storageBucket: "herohunter-27d7b.appspot.com",
-
-    messagingSenderId: "644428061813",
-
-    appId: "1:644428061813:web:a2032fd0cf4584df73ec3c"
 
 };
 
